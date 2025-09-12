@@ -81,3 +81,37 @@ plot(sol, idxs = [sys.capacitor.v, sys.resistor.i],
 ```
 
 ![](https://user-images.githubusercontent.com/1814174/164912983-c3f73628-0e19-4e42-b085-4f62ba6f23d1.png)
+
+## Development Setup
+
+For developers who want to work with related SciML packages locally, a development setup script is provided to clone all related repositories:
+
+```bash
+# Clone development repositories to the default location (../dev-repos)
+./setup_dev_repos.sh
+
+# Or specify a custom directory
+./setup_dev_repos.sh /path/to/your/dev/directory
+```
+
+This script clones the following related repositories for local development and testing:
+
+- [BSeries.jl](https://github.com/ranocha/BSeries.jl)
+- [RootedTrees.jl](https://github.com/SciML/RootedTrees.jl)
+- [DifferentialEquations.jl](https://github.com/SciML/DifferentialEquations.jl)
+- [ReservoirComputing.jl](https://github.com/SciML/ReservoirComputing.jl)
+- [ModelingToolkit.jl](https://github.com/SciML/ModelingToolkit.jl)
+- [ModelingToolkitNeuralNets.jl](https://github.com/SciML/ModelingToolkitNeuralNets.jl)
+- [NeuralPDE.jl](https://github.com/SciML/NeuralPDE.jl)
+- [ParameterizedFunctions.jl](https://github.com/SciML/ParameterizedFunctions.jl)
+- [DataDrivenDiffEq.jl](https://github.com/SciML/DataDrivenDiffEq.jl)
+- [Catalyst.jl](https://github.com/SciML/Catalyst.jl)
+- [MultiScaleArrays.jl](https://github.com/SciML/MultiScaleArrays.jl)
+
+After cloning, you can develop against these packages using Julia's package manager:
+
+```julia
+using Pkg
+# Add a specific package for development
+Pkg.develop(path="/path/to/dev-repos/ModelingToolkit.jl")
+```
